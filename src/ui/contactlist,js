@@ -1,0 +1,20 @@
+import React from "react";
+import ContactBrief from "ui/ContactBrief";
+//my Peeps (also contains contactbrief)
+
+export default React.createClass ({
+	render: function () {
+		return (
+			<div class="listview">
+				<p> My Peeps </p>
+				{this.props.users.map(function(user) {
+					return <ContactBrief key={user.registered} id={user.registered} image={user.image} fname ={user.fname} lmname={user.lname}
+				})}
+			</div>
+		)
+	}
+})
+
+
+
+	
