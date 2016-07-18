@@ -1,17 +1,12 @@
-import React from "react"
-// import Contacts from "api/contactlistcontainer.js";
+import React from "react"; 
 import { Link } from "react-router";
-//list data from contactclistontainer//
-//imported from contactlist file
-export default reactCreateClass ({
+export default React.createClass ({
 	render:function() {
 		return (
-			<link to={"/contact/" + this.props.id}>   
-				<div class="briefs">
-					<img src={this.props.image} />
-					<span> {this.props.fname} {this.props.lname} </span>
-				</div>
-			</link>
+			<Link to={"/contact/" + this.props.id}>  
+				<img className="briefimg" src={this.props.image} />
+				 <span> {this.props.fname} {this.props.lname} <hr/> </span>
+			</Link>
 		)
 	}	
 })

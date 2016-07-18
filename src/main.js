@@ -3,17 +3,13 @@ import { render } from 'react-dom';
 import { Router, Route, browserHistory, hashHistory } from 'react-router';
 
 
-import ContactContainer from "ui/contactcontainer.js";
-import ContactListContainer from "ui/contactlistcontainer.js";
-//import both containers set path to both containers
-// UI
-
-import ExampleComponent from 'ui/example';
+import ContactContainer from "ui/ContactContainer";
+import ContactListContainer from "ui/ContactListContainer";
 
 const Site = (
   <Router history={hashHistory}>
-      <Route path="/" component={ContactListContainer} />
-      <Route path="/" component={ContactContainer} />
+      <Route path="/" component={ContactListContainer} /> 
+      <Route path="/contact/:contactId" component={ContactContainer} />
   </Router>
 );
 

@@ -1,23 +1,21 @@
-import React from "react";
-import Contacts from "ui/ContactList.js";
-import {getContactList} from "api/allcontacts";
-//import contactbrief and render out
-//import allcontacts
-//photo, fname, lname, 
+import React from "react"; //for list view//
+import ContactList from "ui/ContactList";
+import { getContactList } from "api/people";
+ 
 export default React.createClass ({
 	getInitialState:function(){
 		return {
-			users: []
+			people: []
 		}
 	},
-	componentWillMount :function() {
+	componentWillMount: function() {
 		this.setState({
-			users: getContactList()
+			people: getContactList()
 		});
 	},
 	render: function() {
 		return (
-			ContactList users={this.state.users} />
+			<ContactList people={this.state.people} />
 		)
 	}	
 })
